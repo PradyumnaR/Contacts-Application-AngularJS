@@ -1,0 +1,39 @@
+<html>
+	<head>
+		
+	</head>
+
+	<body>
+		<div ng-app="coreApp" >
+
+			<h1>Angular Application</h1>
+
+			<div class="container" ng-controller="coreController">
+				<div class="person-name">
+					<lable>Name</lable>
+					<input type = "text" ng-model="person.name"></input>
+				</div>
+				<div class="person-occupation">
+					<lable>Occupation</lable>
+					<input type = "text" ng-model="person.occupation"></input>
+				</div>
+				<button ng-click="save(person)">Submit</button>
+			</div>
+			<!--Vender dependencies-->
+			<script type="text/javascript" src = "../bower_components/angular/angular.js"></script>
+		
+			<!--Application dependencies-->
+			<script type="text/javascript" src = "../app/core.client.js"></script>
+			<script type="text/javascript" src = "../app/controllers/core.controller.client.js"></script>
+
+			<table ng-controller="readController">
+				<tr ng-repeat = "person in people">
+					<td>{{person.name}}</td>
+					<td>{{person.occupation}}</td>
+				</tr>
+			</table>
+			
+		</div>
+	</body>
+
+</html>

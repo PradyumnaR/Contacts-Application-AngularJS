@@ -1,0 +1,44 @@
+<html ng-app="diApp">
+	
+	<body>
+
+		<div class = "container" ng-controller="diCtrl">
+			<div class = "search-wrapper">
+				<lable for="">Serach</lable>
+				<input type="text" ng-model="user_input"></input>
+			</div>
+			<div class = "name-wrapper">
+				<lable for="">Name:</lable>
+				<input type="text" ng-model="person.name"></input>
+			</div>
+			<div class = "occupation-wrapper">
+				<lable for="">Occupation:</lable>
+				<input type="text" ng-model="person.occupation"></input>
+			</div>
+			<button ng-click = "persist(person)">Submit</button>
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>OCCUPATION</th>
+				</tr>
+				<tr ng-repeat = "person in people | filter:user_input">
+					<td>{{person.id}}</td>
+					<td>{{person.name}}</td>
+					<td>{{person.occupation}}</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!--Vender dependencies-->
+		<script type="text/javascript" src = "../bower_components/angular/angular.js"></script>
+
+		<!--Application dependencies-->
+		<script type="text/javascript" src = "../app/modules/js/config.js"></script>
+		<script type="text/javascript" src = "../app/modules/js/controllers/di-controller.client.js"></script>
+
+
+	</body>
+
+</html>
